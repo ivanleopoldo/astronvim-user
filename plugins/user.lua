@@ -3,7 +3,6 @@ return {
   -- Add plugins, the lazy syntax
   -- "andweeb/presence.nvim",
   { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
-
   {
     "nvim-neo-tree/neo-tree.nvim",
     opts = {
@@ -22,5 +21,20 @@ return {
         },
       },
     },
+  },
+  {
+    "iamcco/markdown-preview.nvim",
+    cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
+    ft = { "markdown" },
+    build = function() vim.fn["mkdp#util#install"]() end,
+  },
+  {
+    "github/copilot.vim",
+    lazy = false,
+    cmd = { "Copilot" },
+  },
+  {
+    "andweeb/presence.nvim",
+    lazy = false,
   },
 }
